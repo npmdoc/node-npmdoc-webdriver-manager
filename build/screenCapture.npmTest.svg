@@ -1,0 +1,195 @@
+<svg height="3070" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="3070" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26"></tspan>
+<tspan x="10" y="42">&gt; npmdoc-webdriver-manager@0.0.1 test /home/travis/build/npmdoc/node-npmdoc-webdriver-manager</tspan>
+<tspan x="10" y="58">&gt; (set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)</tspan>
+<tspan x="10" y="74"></tspan>
+<tspan x="10" y="90"></tspan>
+<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-04-07T14:39:33Z - npm-testing /home/travis/build/npmdoc/node-npmdoc-\</tspan>
+<tspan x="10" y="122">webdriver-manager</tspan>
+<tspan x="10" y="138"></tspan>
+<tspan x="10" y="154"></tspan>
+<tspan x="10" y="170">covering $ /home/travis/.nvm/versions/node/v6.10.2/bin/node /home/travis/build/npmdoc/node-npmdo\</tspan>
+<tspan x="10" y="186">c-webdriver-manager/test.js</tspan>
+<tspan x="10" y="202">merging file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/test-report.jso\</tspan>
+<tspan x="10" y="218">n to test-report</tspan>
+<tspan x="10" y="234">&gt; server listening on http-port 42309</tspan>
+<tspan x="10" y="250">Usage: webdriver-manager &lt;command&gt; [options]</tspan>
+<tspan x="10" y="266"></tspan>
+<tspan x="10" y="282">Commands:</tspan>
+<tspan x="10" y="298">  clean      removes all downloaded driver files from the out_dir</tspan>
+<tspan x="10" y="314">  start      start up the selenium server</tspan>
+<tspan x="10" y="330">  shutdown   shut down the selenium server</tspan>
+<tspan x="10" y="346">  status     list the current available drivers</tspan>
+<tspan x="10" y="362">  update     install or update selected binaries</tspan>
+<tspan x="10" y="378">  version    get the current version</tspan>
+<tspan x="10" y="394"></tspan>
+<tspan x="10" y="410">Options:</tspan>
+<tspan x="10" y="426">  --out_dir                   Location to output/expect                                         \</tspan>
+<tspan x="10" y="442">                                                                   [default: /home/travis/build/\</tspan>
+<tspan x="10" y="458">npmdoc/node-npmdoc-webdriver-manager/node_modules/webdriver-manager/selenium]</tspan>
+<tspan x="10" y="474">  --seleniumPort              Optional port for the selenium standalone server                  \</tspan>
+<tspan x="10" y="490">                                                                   [default: 4444]</tspan>
+<tspan x="10" y="506">  --appium-port               Optional port for the appium server                               \</tspan>
+<tspan x="10" y="522">                                                                   [default: 4723]</tspan>
+<tspan x="10" y="538">  --avd-port                  Optional port for android virtual devices.  See mobile.md for deta\</tspan>
+<tspan x="10" y="554">ils                                                                [default: 5554]</tspan>
+<tspan x="10" y="570">  --versions.standalone       Optional seleniuim standalone server version (use 'latest' to get \</tspan>
+<tspan x="10" y="586">the most recent version)                                           [default: latest]</tspan>
+<tspan x="10" y="602">  --versions.chrome           Optional chrome driver version (use 'latest' to get the most recen\</tspan>
+<tspan x="10" y="618">t version)                                                         [default: latest]</tspan>
+<tspan x="10" y="634">  --versions.gecko            Optional gecko driver version                                     \</tspan>
+<tspan x="10" y="650">                                                                   [default: latest]</tspan>
+<tspan x="10" y="666">  --versions.android          Optional android sdk version                                      \</tspan>
+<tspan x="10" y="682">                                                                   [default: 24.4.1]</tspan>
+<tspan x="10" y="698">  --versions.appium           Optional appium version                                           \</tspan>
+<tspan x="10" y="714">                                                                   [default: 1.6.0]</tspan>
+<tspan x="10" y="730">  --chrome_logs               File path to chrome logs</tspan>
+<tspan x="10" y="746">  --logging                   File path to logging properties file</tspan>
+<tspan x="10" y="762">  --android                   Update/use the android sdk</tspan>
+<tspan x="10" y="778">  --avds                      Android virtual devices to emulate.  Use "all" for emulating all p\</tspan>
+<tspan x="10" y="794">ossible devices, and "none" for no devices                         [default: all]</tspan>
+<tspan x="10" y="810">  --avd-use-snapshots         Rather than booting a new AVD every time, save/load snapshots of t\</tspan>
+<tspan x="10" y="826">he last time it was used                                           [default: true]</tspan>
+<tspan x="10" y="842">  --started-signifier         A string to be outputted once the selenium server is up and runnin\</tspan>
+<tspan x="10" y="858">g.  Useful if you are writing a script which uses webdriver-manager.</tspan>
+<tspan x="10" y="874">  --signal-via-ipc            If you are using --started-signifier, this flag will emit the sign\</tspan>
+<tspan x="10" y="890">al string using process.send(), rather than writing it to stdout</tspan>
+<tspan x="10" y="906">  --quiet                     Minimal console output</tspan>
+<tspan x="10" y="922">  --detach                    Once the selenium server is up and running, return control to the \</tspan>
+<tspan x="10" y="938">parent process and continue running the server in the background.</tspan>
+<tspan x="10" y="954">  --already-off-error         Normally if you try to shut down a selenium which is not running, \</tspan>
+<tspan x="10" y="970">you will get a warning.  This turns it into an error</tspan>
+<tspan x="10" y="986">  --verbose                   Extra console output</tspan>
+<tspan x="10" y="1002">  --ignore_ssl                Ignore SSL certificates</tspan>
+<tspan x="10" y="1018">  --proxy                     Proxy to use for the install or update command</tspan>
+<tspan x="10" y="1034">  --alternate_cdn             Alternate CDN to binaries</tspan>
+<tspan x="10" y="1050">  --standalone                Install or update selenium standalone                             \</tspan>
+<tspan x="10" y="1066">                                                                   [default: true]</tspan>
+<tspan x="10" y="1082">  --chrome                    Install or update chromedriver                                    \</tspan>
+<tspan x="10" y="1098">                                                                   [default: true]</tspan>
+<tspan x="10" y="1114">  --gecko                     Install or update geckodriver                                     \</tspan>
+<tspan x="10" y="1130">                                                                   [default: true]</tspan>
+<tspan x="10" y="1146">  --android-api-levels        Which versions of the android API you want to emulate             \</tspan>
+<tspan x="10" y="1162">                                                                   [default: 24]</tspan>
+<tspan x="10" y="1178">  --android-archs             Which architectures you want to use in android emulation.  By defa\</tspan>
+<tspan x="10" y="1194">ult it will try to match os.arch()                                 [default: x86_64]</tspan>
+<tspan x="10" y="1210">  --android-platorms          Which platforms you want to use in android emulation              \</tspan>
+<tspan x="10" y="1226">                                                                   [default: google_apis]</tspan>
+<tspan x="10" y="1242">  --android-accept-licenses   Automatically accept android licenses</tspan>
+<tspan x="10" y="1258">created apidoc file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/apidoc.h\</tspan>
+<tspan x="10" y="1274">tml</tspan>
+<tspan x="10" y="1290"></tspan>
+<tspan x="10" y="1306"></tspan>
+<tspan x="10" y="1322">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-webdriver-manage\</tspan>
+<tspan x="10" y="1338">r/tmp/electron.15b48db2b470.96693b2993e3c.html</tspan>
+<tspan x="10" y="1354"></tspan>
+<tspan x="10" y="1370">[node test-case 1 of 6 passed] - testCase_buildLib_default</tspan>
+<tspan x="10" y="1386">[node test-case 2 of 6 passed] - testCase_buildReadme_default</tspan>
+<tspan x="10" y="1402">[node test-case 3 of 6 passed] - testCase_buildTest_default</tspan>
+<tspan x="10" y="1418"></tspan>
+<tspan x="10" y="1434">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-webdriver-manage\</tspan>
+<tspan x="10" y="1450">r/tmp/electron.15b48db2b6d0.44b242683e3a1.html</tspan>
+<tspan x="10" y="1466"></tspan>
+<tspan x="10" y="1482">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1498">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1514">merging file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/test-report.jso\</tspan>
+<tspan x="10" y="1530">n to test-report</tspan>
+<tspan x="10" y="1546">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1562">[4925:0407/143935:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1578">[4925:0407/143935:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1594">&gt; server listening on http-port 44267</tspan>
+<tspan x="10" y="1610">[4953:0407/143935:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="1626">in process gpu-process. </tspan>
+<tspan x="10" y="1642">merging file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/test-report.jso\</tspan>
+<tspan x="10" y="1658">n to test-report</tspan>
+<tspan x="10" y="1674">[4925:0407/143935:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="1690">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1706">[4921:0407/143935:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1722">[4921:0407/143935:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1738">[4987:0407/143935:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="1754">in process gpu-process. </tspan>
+<tspan x="10" y="1770">[4921:0407/143936:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="1786"></tspan>
+<tspan x="10" y="1802">browserTest - opened url http://127.0.0.1:42309?modeTest=1</tspan>
+<tspan x="10" y="1818"></tspan>
+<tspan x="10" y="1834"></tspan>
+<tspan x="10" y="1850">browserTest - opened url /home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/apido\</tspan>
+<tspan x="10" y="1866">c.html</tspan>
+<tspan x="10" y="1882"></tspan>
+<tspan x="10" y="1898">[4925:0407/143937:INFO:CONSOLE(250)] "----------|-----------|-----------|-----------|-----------\</tspan>
+<tspan x="10" y="1914">|</tspan>
+<tspan x="10" y="1930">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="1946">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1962">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1978">All files |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="1994">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2010">", source: file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/electron.15b48db2b\</tspan>
+<tspan x="10" y="2026">6d0.44b242683e3a1.html (250)</tspan>
+<tspan x="10" y="2042">[4925:0407/143937:INFO:CONSOLE(250)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
+<tspan x="10" y="2058">l", source: file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/electron.15b48db2\</tspan>
+<tspan x="10" y="2074">b6d0.44b242683e3a1.html (250)</tspan>
+<tspan x="10" y="2090">[node test-case 4 of 6 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="2106"></tspan>
+<tspan x="10" y="2122">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manag\</tspan>
+<tspan x="10" y="2138">er/tmp/build/screenCapture.npmTest.browser..png</tspan>
+<tspan x="10" y="2154"></tspan>
+<tspan x="10" y="2170">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manag\</tspan>
+<tspan x="10" y="2186">er/tmp/build/screenCapture.npmTest.browser..html</tspan>
+<tspan x="10" y="2202"></tspan>
+<tspan x="10" y="2218">browserTest - exit-code 0 - http://127.0.0.1:42309?modeTest=1</tspan>
+<tspan x="10" y="2234"></tspan>
+<tspan x="10" y="2250"></tspan>
+<tspan x="10" y="2266">browserTest - merged coverage from /home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/c\</tspan>
+<tspan x="10" y="2282">overage.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="2298"></tspan>
+<tspan x="10" y="2314"></tspan>
+<tspan x="10" y="2330">browserTest - merging test-report from /home/travis/build/npmdoc/node-npmdoc-webdriver-manager/t\</tspan>
+<tspan x="10" y="2346">mp/test-report.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="2362"></tspan>
+<tspan x="10" y="2378">[node test-case 5 of 6 passed] - testCase_webpage_default</tspan>
+<tspan x="10" y="2394"></tspan>
+<tspan x="10" y="2410">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manag\</tspan>
+<tspan x="10" y="2426">er/tmp/build/screenCapture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-webdr\</tspan>
+<tspan x="10" y="2442">iver-manager_2Ftmp_2Fbuild_2Fapidoc.html.png</tspan>
+<tspan x="10" y="2458"></tspan>
+<tspan x="10" y="2474">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manag\</tspan>
+<tspan x="10" y="2490">er/tmp/build/screenCapture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-webdr\</tspan>
+<tspan x="10" y="2506">iver-manager_2Ftmp_2Fbuild_2Fapidoc.html.html</tspan>
+<tspan x="10" y="2522"></tspan>
+<tspan x="10" y="2538">browserTest - exit-code 0 - /home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/ap\</tspan>
+<tspan x="10" y="2554">idoc.html</tspan>
+<tspan x="10" y="2570"></tspan>
+<tspan x="10" y="2586">[node test-case 6 of 6 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="2602">--------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2618">File                                  |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="2634">--------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2650">   node-npmdoc-webdriver-manager/     |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2666">      example.js                      |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2682">      lib.npmdoc_webdriver_manager.js |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2698">      test.js                         |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2714">--------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2730">All files                             |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2746">--------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2762"></tspan>
+<tspan x="10" y="2778">created coverage file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/covera\</tspan>
+<tspan x="10" y="2794">ge.html/index.html</tspan>
+<tspan x="10" y="2810">merging file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/test-report.jso\</tspan>
+<tspan x="10" y="2826">n to test-report</tspan>
+<tspan x="10" y="2842"></tspan>
+<tspan x="10" y="2858">-------------------------------------------------------</tspan>
+<tspan x="10" y="2874">| test-report - buildNpmdoc - node - linux v6.10.2 - 2017-04-07T14:39:13.371Z</tspan>
+<tspan x="10" y="2890">|   36572 ms            0 failed        6 passed      |</tspan>
+<tspan x="10" y="2906">-------------------------------------------------------</tspan>
+<tspan x="10" y="2922"></tspan>
+<tspan x="10" y="2938">created test-report file:///home/travis/build/npmdoc/node-npmdoc-webdriver-manager/tmp/build/tes\</tspan>
+<tspan x="10" y="2954">t-report.html</tspan>
+<tspan x="10" y="2970"></tspan>
+<tspan x="10" y="2986"></tspan>
+<tspan x="10" y="3002">npmTest - 0 failed tests</tspan>
+<tspan x="10" y="3018"></tspan>
+<tspan x="10" y="3034"></tspan>
+<tspan x="10" y="3050">[MODE_BUILD=npmTest] - 2017-04-07T14:39:53Z - EXIT_CODE - 0</tspan>
+</text>
+</svg>
