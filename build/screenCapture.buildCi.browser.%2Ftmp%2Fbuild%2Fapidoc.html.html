@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/angular/webdriver-manager#readme"
-
-    >webdriver-manager (v12.0.4)</a>
+    <a href="https://github.com/angular/webdriver-manager#readme">webdriver-manager (v12.0.4)</a>
 </h1>
 <h4>A selenium server and browser driver manager for your end to end tests.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.webdriver-manager">module webdriver-manager</a><ol>
 
@@ -188,16 +181,16 @@
         return Config.httpsProxy_;
     }
     static getConfigFile_() {
-        return path.resolve(Config.dir, &#x27;..&#x27;, Config.configFile);
+        return path.resolve(Config.dir, '..', Config.configFile);
     }
     static getPackageFile_() {
-        return path.resolve(Config.dir, &#x27;..&#x27;, Config.packageFile);
+        return path.resolve(Config.dir, '..', Config.packageFile);
     }
     static getSeleniumDir() {
-        return path.resolve(Config.dir, &#x27;..&#x27;, &#x27;..&#x27;, &#x27;selenium/&#x27;);
+        return path.resolve(Config.dir, '..', '..', 'selenium/');
     }
     static getBaseDir() {
-        return path.resolve(Config.dir, &#x27;..&#x27;, &#x27;..&#x27;);
+        return path.resolve(Config.dir, '..', '..');
     }
 <span class="apidocCodeCommentSpan">    /**
      * Get the binary versions from the configuration file.
@@ -265,7 +258,7 @@
     }
     static optionsSSL(options, opt_ignoreSSL) {
         if (opt_ignoreSSL) {
-            logger.info(&#x27;ignoring SSL certificate&#x27;);
+            logger.info('ignoring SSL certificate');
             options.strictSSL = !opt_ignoreSSL;
             options.rejectUnauthorized = !opt_ignoreSSL;
         }
@@ -274,8 +267,8 @@
     static optionsProxy(options, requestUrl, opt_proxy) {
         if (opt_proxy) {
             options.proxy = HttpUtils.resolveProxy(requestUrl, opt_proxy);
-            if (url.parse(requestUrl).protocol === &#x27;https:&#x27;) {
-                options.url = requestUrl.replace(&#x27;https:&#x27;, &#x27;http:&#x27;);
+            if (url.parse(requestUrl).protocol === 'https:') {
+                options.url = requestUrl.replace('https:', 'http:');
             }
         }
         return options;
@@ -306,9 +299,9 @@
             let noProxy = config_1.Config.noProxy();
             if (noProxy) {
                 // array of hostnames/domain names listed in the NO_PROXY environment variable
-                let noProxyTokens = noProxy.split(&#x27;,&#x27;);
+                let noProxyTokens = noProxy.split(',');
                 // check if the fileUrl hostname part does not end with one of the
-                // NO_PROXY environment variable&#x27;s hostnames/domain names
+                // NO_PROXY environment variable's hostnames/domain names
                 for (let noProxyToken of noProxyTokens) {
                     if (hostname.indexOf(noProxyToken) !== -1) {
                         return undefined;
@@ -316,10 +309,10 @@
                 }
             }
             // If the HTTPS_PROXY and HTTP_PROXY environment variable is set, use that as the proxy
-            if (protocol === &#x27;https:&#x27;) {
+            if (protocol === 'https:') {
                 return config_1.Config.httpsProxy() || config_1.Config.httpProxy();
             }
-            else if (protocol === &#x27;http:&#x27;) {
+            else if (protocol === 'http:') {
                 return config_1.Config.httpProxy();
             }
         }
@@ -344,42 +337,42 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function adb(sdkPath, port, command, timeout, args) {
-    return new Promise((resolve, reject) =&#x3e; {
-        let child = exports.spawn(path.resolve(sdkPath, &#x27;platform-tools&#x27;, &#x27;adb&#x27;), [&#x27;-s&#x27;, &#x27;emulator-&#x27; + port, command].concat(args
- || []), &#x27;pipe&#x27;);
+    return new Promise((resolve, reject) =&gt; {
+        let child = exports.spawn(path.resolve(sdkPath, 'platform-tools', 'adb'), ['-s', 'emulator-' + port, command].concat(args
+ || []), 'pipe');
         let done = false;
         let buffer = [];
-        child.stdout.on(&#x27;data&#x27;, buffer.push.bind(buffer));
-        child.on(&#x27;error&#x27;, (err) =&#x3e; {
+        child.stdout.on('data', buffer.push.bind(buffer));
+        child.on('error', (err) =&gt; {
             if (!done) {
                 done = true;
                 reject(err);
             }
         });
-        child.on(&#x27;exit&#x27;, (code, signal) =&#x3e; {
+        child.on('exit', (code, signal) =&gt; {
             if (!done) {
                 done = true;
                 if (code === 0) {
-                    resolve(buffer.join(&#x27;&#x27;));
+                    resolve(buffer.join(''));
                 }
                 else {
                     reject({
                         code: code,
-                        message: &#x27;abd command &#x22;&#x27; + command + &#x27;&#x22; &#x27; +
-                            (signal ? &#x27;received signal &#x27; + signal : &#x27;returned with a non-zero exit code&#x27;) +
-                            &#x27;for emulator-&#x27; + port
+                        message: 'abd command "' + command + '" ' +
+                            (signal ? 'received signal ' + signal : 'returned with a non-zero exit code') +
+                            'for emulator-' + port
                     });
                 }
             }
         });
         if (timeout) {
-            setTimeout(() =&#x3e; {
+            setTimeout(() =&gt; {
                 if (!done) {
                     done = true;
                     child.kill();
                     reject({
-                        code: &#x27;TIMEOUT&#x27;,
-                        message: &#x27;adb command &#x22;&#x27; + command + &#x27;&#x22; timed out for emulator-&#x27; + port
+                        code: 'TIMEOUT',
+                        message: 'adb command "' + command + '" timed out for emulator-' + port
                     });
                 }
             }, timeout);
@@ -400,36 +393,36 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function request(method, port, path, timeout, data) {
     let headers = {};
-    let hasContent = data &#x26;&#x26; ((method == &#x27;POST&#x27;) || (method == &#x27;PUT&#x27;));
+    let hasContent = data &amp;&amp; ((method == 'POST') || (method == 'PUT'));
     if (hasContent) {
-        data = data ? JSON.stringify(data) : &#x27;&#x27;;
-        headers[&#x27;Content-Length&#x27;] = data.length;
-        headers[&#x27;Content-Type&#x27;] = &#x27;application/json;charset=UTF-8&#x27;;
+        data = data ? JSON.stringify(data) : '';
+        headers['Content-Length'] = data.length;
+        headers['Content-Type'] = 'application/json;charset=UTF-8';
     }
-    return new Promise((resolve, reject) =&#x3e; {
-        let unexpectedEnd = () =&#x3e; {
-            reject({ code: &#x27;UNKNOWN&#x27;, message: &#x27;Request ended unexpectedly&#x27; });
+    return new Promise((resolve, reject) =&gt; {
+        let unexpectedEnd = () =&gt; {
+            reject({ code: 'UNKNOWN', message: 'Request ended unexpectedly' });
         };
-        let req = http.request({ port: parseInt(port), method: method, path: path, headers: headers }, (res) =&#x3e; {
-            req.removeListener(&#x27;end&#x27;, unexpectedEnd);
+        let req = http.request({ port: parseInt(port), method: method, path: path, headers: headers }, (res) =&gt; {
+            req.removeListener('end', unexpectedEnd);
             if (res.statusCode !== 200) {
                 reject({ code: res.statusCode, message: res.statusMessage });
             }
             else {
                 let buffer = [];
-                res.on(&#x27;data&#x27;, buffer.push.bind(buffer));
-                res.on(&#x27;end&#x27;, () =&#x3e; {
-                    resolve(buffer.join(&#x27;&#x27;).replace(/\0/g, &#x27;&#x27;));
+                res.on('data', buffer.push.bind(buffer));
+                res.on('end', () =&gt; {
+                    resolve(buffer.join('').replace(/\0/g, ''));
                 });
             }
         });
         if (timeout) {
-            req.setTimeout(timeout, () =&#x3e; {
-                reject({ code: &#x27;TIMEOUT&#x27;, message: &#x27;Request timed out&#x27; });
+            req.setTimeout(timeout, () =&gt; {
+                reject({ code: 'TIMEOUT', message: 'Request timed out' });
             });
         }
-        req.on(&#x27;error&#x27;, reject);
-        req.on(&#x27;end&#x27;, unexpectedEnd);
+        req.on('error', reject);
+        req.on('end', unexpectedEnd);
         if (hasContent) {
             req.write(data);
         }
@@ -437,22 +430,22 @@
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    headers[&#x27;Content-Length&#x27;] = data.length;
-    headers[&#x27;Content-Type&#x27;] = &#x27;application/json;charset=UTF-8&#x27;;
+    headers['Content-Length'] = data.length;
+    headers['Content-Type'] = 'application/json;charset=UTF-8';
 }
-return new Promise((resolve, reject) =&#x3e; {
-    let unexpectedEnd = () =&#x3e; {
-        reject({ code: &#x27;UNKNOWN&#x27;, message: &#x27;Request ended unexpectedly&#x27; });
+return new Promise((resolve, reject) =&gt; {
+    let unexpectedEnd = () =&gt; {
+        reject({ code: 'UNKNOWN', message: 'Request ended unexpectedly' });
     };
     let req = http.<span class="apidocCodeKeywordSpan">request</span>({ port: parseInt(port), method: method, path: path, headers
-: headers }, (res) =&#x3e; {
-        req.removeListener(&#x27;end&#x27;, unexpectedEnd);
+: headers }, (res) =&gt; {
+        req.removeListener('end', unexpectedEnd);
         if (res.statusCode !== 200) {
             reject({ code: res.statusCode, message: res.statusMessage });
         }
         else {
             let buffer = [];
-            res.on(&#x27;data&#x27;, buffer.push.bind(buffer));
+            res.on('data', buffer.push.bind(buffer));
 ...</pre></li>
     </ul>
 
@@ -465,14 +458,14 @@ return new Promise((resolve, reject) =&#x3e; {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&#x3e; {
-    if ((config_1.Config.osType() === &#x27;Windows_NT&#x27;) &#x26;&#x26; (cmd.slice(-4) !== &#x27;.exe&#x27;)) {
-        if (fs.existsSync(cmd + &#x27;.exe&#x27;)) {
-            cmd += &#x27;.exe&#x27;;
+    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&gt; {
+    if ((config_1.Config.osType() === 'Windows_NT') &amp;&amp; (cmd.slice(-4) !== '.exe')) {
+        if (fs.existsSync(cmd + '.exe')) {
+            cmd += '.exe';
         }
         else {
-            args = [&#x27;/c&#x27;].concat([cmd], args);
-            cmd = &#x27;cmd&#x27;;
+            args = ['/c'].concat([cmd], args);
+            cmd = 'cmd';
         }
     }
     if (stdio) {
@@ -514,14 +507,14 @@ let headers = {};
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&#x3e; {
-    if ((config_1.Config.osType() === &#x27;Windows_NT&#x27;) &#x26;&#x26; (cmd.slice(-4) !== &#x27;.exe&#x27;)) {
-        if (fs.existsSync(cmd + &#x27;.exe&#x27;)) {
-            cmd += &#x27;.exe&#x27;;
+    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&gt; {
+    if ((config_1.Config.osType() === 'Windows_NT') &amp;&amp; (cmd.slice(-4) !== '.exe')) {
+        if (fs.existsSync(cmd + '.exe')) {
+            cmd += '.exe';
         }
         else {
-            args = [&#x27;/c&#x27;].concat([cmd], args);
-            cmd = &#x27;cmd&#x27;;
+            args = ['/c'].concat([cmd], args);
+            cmd = 'cmd';
         }
     }
     if (stdio) {
@@ -563,3 +556,4 @@ exports.spawn = spawnFactory(false);
     ]
 </div>
 </div>
+</body></html>

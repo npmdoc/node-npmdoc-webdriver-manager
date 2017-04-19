@@ -61,12 +61,499 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.webdriver-manager">module webdriver-manager</a><ol>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webdriver-manager.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webdriver-manager.</span>http_utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webdriver-manager.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webdriver-manager.config">module webdriver-manager.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.config.Config">
+            function <span class="apidocSignatureSpan">webdriver-manager.config.</span>Config
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webdriver-manager.http_utils">module webdriver-manager.http_utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.http_utils.HttpUtils">
+            function <span class="apidocSignatureSpan">webdriver-manager.http_utils.</span>HttpUtils
+            <span class="apidocSignatureSpan">(url, timeout)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webdriver-manager.utils">module webdriver-manager.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.utils.adb">
+            function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>adb
+            <span class="apidocSignatureSpan">(sdkPath, port, command, timeout, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.utils.request">
+            function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>request
+            <span class="apidocSignatureSpan">(method, port, path, timeout, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.utils.spawn">
+            function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>spawn
+            <span class="apidocSignatureSpan">(cmd, args, stdio, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webdriver-manager.utils.spawnSync">
+            function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>spawnSync
+            <span class="apidocSignatureSpan">(cmd, args, stdio, opts)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.webdriver-manager" id="apidoc.module.webdriver-manager">module webdriver-manager</a></h1>
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webdriver-manager.config" id="apidoc.module.webdriver-manager.config">module webdriver-manager.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.config.Config" id="apidoc.element.webdriver-manager.config.Config">
+        function <span class="apidocSignatureSpan">webdriver-manager.config.</span>Config
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Config {
+    static osArch() {
+        return Config.osArch_;
+    }
+    static osType() {
+        return Config.osType_;
+    }
+    static noProxy() {
+        return Config.noProxy_;
+    }
+    static httpProxy() {
+        return Config.httpProxy_;
+    }
+    static httpsProxy() {
+        return Config.httpsProxy_;
+    }
+    static getConfigFile_() {
+        return path.resolve(Config.dir, &#x27;..&#x27;, Config.configFile);
+    }
+    static getPackageFile_() {
+        return path.resolve(Config.dir, &#x27;..&#x27;, Config.packageFile);
+    }
+    static getSeleniumDir() {
+        return path.resolve(Config.dir, &#x27;..&#x27;, &#x27;..&#x27;, &#x27;selenium/&#x27;);
+    }
+    static getBaseDir() {
+        return path.resolve(Config.dir, &#x27;..&#x27;, &#x27;..&#x27;);
+    }
+<span class="apidocCodeCommentSpan">    /**
+     * Get the binary versions from the configuration file.
+     * @returns A map of the versions defined in the configuration file.
+     */
+</span>    static binaryVersions() {
+        let configFile = require(Config.getConfigFile_());
+        let configVersions = {};
+        configVersions.selenium = configFile.webdriverVersions.selenium;
+        configVersions.chrome = configFile.webdriverVersions.chromedriver;
+        configVersions.gecko = configFile.webdriverVersions.geckodriver;
+        configVersions.ie = configFile.webdriverVersions.iedriver;
+        configVersions.android = configFile.webdriverVersions.androidsdk;
+        configVersions.appium = configFile.webdriverVersions.appium;
+        return configVersions;
+    }
+    /**
+     * Get the CDN urls from the configuration file.
+     * @returns A map of the CDN versions defined in the configuration file.
+     */
+    static cdnUrls() {
+        let configFile = require(Config.getConfigFile_());
+        let configCdnUrls = {};
+        configCdnUrls.selenium = configFile.cdnUrls.selenium;
+        configCdnUrls.chrome = configFile.cdnUrls.chromedriver;
+        configCdnUrls.gecko = configFile.cdnUrls.geckodriver;
+        configCdnUrls.ie = configFile.cdnUrls.iedriver;
+        configCdnUrls.android = configFile.cdnUrls.androidsdk;
+        return configCdnUrls;
+    }
+    /**
+     * Get the package version.
+     */
+    static getVersion() {
+        let packageFile = require(Config.getPackageFile_());
+        return packageFile.version;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webdriver-manager.http_utils" id="apidoc.module.webdriver-manager.http_utils">module webdriver-manager.http_utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.http_utils.HttpUtils" id="apidoc.element.webdriver-manager.http_utils.HttpUtils">
+        function <span class="apidocSignatureSpan">webdriver-manager.http_utils.</span>HttpUtils
+        <span class="apidocSignatureSpan">(url, timeout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class HttpUtils {
+    static initOptions(url, timeout) {
+        let options = {
+            url: url,
+            // default Linux can be anywhere from 20-120 seconds
+            // increasing this arbitrarily to 4 minutes
+            timeout: 240000
+        };
+        return options;
+    }
+    static optionsSSL(options, opt_ignoreSSL) {
+        if (opt_ignoreSSL) {
+            logger.info(&#x27;ignoring SSL certificate&#x27;);
+            options.strictSSL = !opt_ignoreSSL;
+            options.rejectUnauthorized = !opt_ignoreSSL;
+        }
+        return options;
+    }
+    static optionsProxy(options, requestUrl, opt_proxy) {
+        if (opt_proxy) {
+            options.proxy = HttpUtils.resolveProxy(requestUrl, opt_proxy);
+            if (url.parse(requestUrl).protocol === &#x27;https:&#x27;) {
+                options.url = requestUrl.replace(&#x27;https:&#x27;, &#x27;http:&#x27;);
+            }
+        }
+        return options;
+    }
+    static optionsHeader(options, key, value) {
+        if (options.headers == null) {
+            options.headers = {};
+        }
+        options.headers[key] = value;
+        return options;
+    }
+<span class="apidocCodeCommentSpan">    /**
+     * Resolves proxy based on values set
+     * @param fileUrl The url to download the file.
+     * @param opt_proxy The proxy to connect to to download files.
+     * @return Either undefined or the proxy.
+     */
+</span>    static resolveProxy(fileUrl, opt_proxy) {
+        let protocol = url.parse(fileUrl).protocol;
+        let hostname = url.parse(fileUrl).hostname;
+        if (opt_proxy) {
+            return opt_proxy;
+        }
+        else {
+            // If the NO_PROXY environment variable exists and matches the host name,
+            // to ignore the resolve proxy.
+            // the checks to see if it exists and equal to empty string is to help with testing
+            let noProxy = config_1.Config.noProxy();
+            if (noProxy) {
+                // array of hostnames/domain names listed in the NO_PROXY environment variable
+                let noProxyTokens = noProxy.split(&#x27;,&#x27;);
+                // check if the fileUrl hostname part does not end with one of the
+                // NO_PROXY environment variable&#x27;s hostnames/domain names
+                for (let noProxyToken of noProxyTokens) {
+                    if (hostname.indexOf(noProxyToken) !== -1) {
+                        return undefined;
+                    }
+                }
+            }
+            // If the HTTPS_PROXY and HTTP_PROXY environment variable is set, use that as the proxy
+            if (protocol === &#x27;https:&#x27;) {
+                return config_1.Config.httpsProxy() || config_1.Config.httpProxy();
+            }
+            else if (protocol === &#x27;http:&#x27;) {
+                return config_1.Config.httpProxy();
+            }
+        }
+        return undefined;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webdriver-manager.utils" id="apidoc.module.webdriver-manager.utils">module webdriver-manager.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.utils.adb" id="apidoc.element.webdriver-manager.utils.adb">
+        function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>adb
+        <span class="apidocSignatureSpan">(sdkPath, port, command, timeout, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function adb(sdkPath, port, command, timeout, args) {
+    return new Promise((resolve, reject) =&#x3e; {
+        let child = exports.spawn(path.resolve(sdkPath, &#x27;platform-tools&#x27;, &#x27;adb&#x27;), [&#x27;-s&#x27;, &#x27;emulator-&#x27; + port, command].concat(args
+ || []), &#x27;pipe&#x27;);
+        let done = false;
+        let buffer = [];
+        child.stdout.on(&#x27;data&#x27;, buffer.push.bind(buffer));
+        child.on(&#x27;error&#x27;, (err) =&#x3e; {
+            if (!done) {
+                done = true;
+                reject(err);
+            }
+        });
+        child.on(&#x27;exit&#x27;, (code, signal) =&#x3e; {
+            if (!done) {
+                done = true;
+                if (code === 0) {
+                    resolve(buffer.join(&#x27;&#x27;));
+                }
+                else {
+                    reject({
+                        code: code,
+                        message: &#x27;abd command &#x22;&#x27; + command + &#x27;&#x22; &#x27; +
+                            (signal ? &#x27;received signal &#x27; + signal : &#x27;returned with a non-zero exit code&#x27;) +
+                            &#x27;for emulator-&#x27; + port
+                    });
+                }
+            }
+        });
+        if (timeout) {
+            setTimeout(() =&#x3e; {
+                if (!done) {
+                    done = true;
+                    child.kill();
+                    reject({
+                        code: &#x27;TIMEOUT&#x27;,
+                        message: &#x27;adb command &#x22;&#x27; + command + &#x27;&#x22; timed out for emulator-&#x27; + port
+                    });
+                }
+            }, timeout);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.utils.request" id="apidoc.element.webdriver-manager.utils.request">
+        function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>request
+        <span class="apidocSignatureSpan">(method, port, path, timeout, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(method, port, path, timeout, data) {
+    let headers = {};
+    let hasContent = data &#x26;&#x26; ((method == &#x27;POST&#x27;) || (method == &#x27;PUT&#x27;));
+    if (hasContent) {
+        data = data ? JSON.stringify(data) : &#x27;&#x27;;
+        headers[&#x27;Content-Length&#x27;] = data.length;
+        headers[&#x27;Content-Type&#x27;] = &#x27;application/json;charset=UTF-8&#x27;;
+    }
+    return new Promise((resolve, reject) =&#x3e; {
+        let unexpectedEnd = () =&#x3e; {
+            reject({ code: &#x27;UNKNOWN&#x27;, message: &#x27;Request ended unexpectedly&#x27; });
+        };
+        let req = http.request({ port: parseInt(port), method: method, path: path, headers: headers }, (res) =&#x3e; {
+            req.removeListener(&#x27;end&#x27;, unexpectedEnd);
+            if (res.statusCode !== 200) {
+                reject({ code: res.statusCode, message: res.statusMessage });
+            }
+            else {
+                let buffer = [];
+                res.on(&#x27;data&#x27;, buffer.push.bind(buffer));
+                res.on(&#x27;end&#x27;, () =&#x3e; {
+                    resolve(buffer.join(&#x27;&#x27;).replace(/\0/g, &#x27;&#x27;));
+                });
+            }
+        });
+        if (timeout) {
+            req.setTimeout(timeout, () =&#x3e; {
+                reject({ code: &#x27;TIMEOUT&#x27;, message: &#x27;Request timed out&#x27; });
+            });
+        }
+        req.on(&#x27;error&#x27;, reject);
+        req.on(&#x27;end&#x27;, unexpectedEnd);
+        if (hasContent) {
+            req.write(data);
+        }
+        req.end();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    headers[&#x27;Content-Length&#x27;] = data.length;
+    headers[&#x27;Content-Type&#x27;] = &#x27;application/json;charset=UTF-8&#x27;;
+}
+return new Promise((resolve, reject) =&#x3e; {
+    let unexpectedEnd = () =&#x3e; {
+        reject({ code: &#x27;UNKNOWN&#x27;, message: &#x27;Request ended unexpectedly&#x27; });
+    };
+    let req = http.<span class="apidocCodeKeywordSpan">request</span>({ port: parseInt(port), method: method, path: path, headers
+: headers }, (res) =&#x3e; {
+        req.removeListener(&#x27;end&#x27;, unexpectedEnd);
+        if (res.statusCode !== 200) {
+            reject({ code: res.statusCode, message: res.statusMessage });
+        }
+        else {
+            let buffer = [];
+            res.on(&#x27;data&#x27;, buffer.push.bind(buffer));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.utils.spawn" id="apidoc.element.webdriver-manager.utils.spawn">
+        function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>spawn
+        <span class="apidocSignatureSpan">(cmd, args, stdio, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&#x3e; {
+    if ((config_1.Config.osType() === &#x27;Windows_NT&#x27;) &#x26;&#x26; (cmd.slice(-4) !== &#x27;.exe&#x27;)) {
+        if (fs.existsSync(cmd + &#x27;.exe&#x27;)) {
+            cmd += &#x27;.exe&#x27;;
+        }
+        else {
+            args = [&#x27;/c&#x27;].concat([cmd], args);
+            cmd = &#x27;cmd&#x27;;
+        }
+    }
+    if (stdio) {
+        opts = opts || {};
+        opts.stdio = stdio;
+    }
+    if (sync) {
+        return child_process.spawnSync(cmd, args, opts);
+    }
+    else {
+        return child_process.spawn(cmd, args, opts);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        opts = opts || {};
+        opts.stdio = stdio;
+    }
+    if (sync) {
+        return child_process.spawnSync(cmd, args, opts);
+    }
+    else {
+        return child_process.<span class="apidocCodeKeywordSpan">spawn</span>(cmd, args, opts);
+    }
+};
+}
+exports.spawn = spawnFactory(false);
+exports.spawnSync = spawnFactory(true);
+function request(method, port, path, timeout, data) {
+let headers = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webdriver-manager.utils.spawnSync" id="apidoc.element.webdriver-manager.utils.spawnSync">
+        function <span class="apidocSignatureSpan">webdriver-manager.utils.</span>spawnSync
+        <span class="apidocSignatureSpan">(cmd, args, stdio, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(cmd, args, stdio, opts) =&#x3e; {
+    if ((config_1.Config.osType() === &#x27;Windows_NT&#x27;) &#x26;&#x26; (cmd.slice(-4) !== &#x27;.exe&#x27;)) {
+        if (fs.existsSync(cmd + &#x27;.exe&#x27;)) {
+            cmd += &#x27;.exe&#x27;;
+        }
+        else {
+            args = [&#x27;/c&#x27;].concat([cmd], args);
+            cmd = &#x27;cmd&#x27;;
+        }
+    }
+    if (stdio) {
+        opts = opts || {};
+        opts.stdio = stdio;
+    }
+    if (sync) {
+        return child_process.spawnSync(cmd, args, opts);
+    }
+    else {
+        return child_process.spawn(cmd, args, opts);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+        }
+        if (stdio) {
+            opts = opts || {};
+            opts.stdio = stdio;
+        }
+        if (sync) {
+            return child_process.<span class="apidocCodeKeywordSpan">spawnSync</span>(cmd, args, opts);
+        }
+        else {
+            return child_process.spawn(cmd, args, opts);
+        }
+    };
+}
+exports.spawn = spawnFactory(false);
+...</pre></li>
+    </ul>
+
 
 </div>
 
