@@ -1,9 +1,14 @@
-# api documentation for  [webdriver-manager (v12.0.4)](https://github.com/angular/webdriver-manager#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-webdriver-manager.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webdriver-manager) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webdriver-manager.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webdriver-manager)
+# npmdoc-webdriver-manager
+
+#### api documentation for  [webdriver-manager (v12.0.4)](https://github.com/angular/webdriver-manager#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-webdriver-manager.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webdriver-manager) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webdriver-manager.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webdriver-manager)
+
 #### A selenium server and browser driver manager for your end to end tests.
 
-[![NPM](https://nodei.co/npm/webdriver-manager.png?downloads=true)](https://www.npmjs.com/package/webdriver-manager)
+[![NPM](https://nodei.co/npm/webdriver-manager.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/webdriver-manager)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-webdriver-manager_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-webdriver-manager/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Craig Nishina",
-        "email": "craig.nishina@gmail.com"
+        "name": "Craig Nishina"
     },
     "bin": {
         "webdriver-manager": "bin/webdriver-manager"
@@ -88,13 +92,11 @@
     "main": "built/lib/webdriver.js",
     "maintainers": [
         {
-            "name": "angularcore",
-            "email": "angular-core+npm@google.com"
+            "name": "angularcore"
         }
     ],
     "name": "webdriver-manager",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/angular/webdriver-manager.git"
@@ -110,16 +112,6 @@
     "version": "12.0.4"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module webdriver-manager](#apidoc.module.webdriver-manager)
-
-
-
-# <a name="apidoc.module.webdriver-manager"></a>[module webdriver-manager](#apidoc.module.webdriver-manager)
 
 
 
